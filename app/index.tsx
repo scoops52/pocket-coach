@@ -1,10 +1,12 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import { Link, Redirect, Stack } from 'expo-router'
+import React from 'react';
+import { Link, Redirect, Stack } from 'expo-router';
+import { NativeBaseProvider } from 'native-base';
 
 const Home = () => {
   return (
-    <Redirect href="/summary"/>
+    <>
+      <Redirect href="/summary"/>
+    </>
   )
 }
 
