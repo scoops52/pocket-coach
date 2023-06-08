@@ -48,8 +48,8 @@ const RatioDisplay = () => {
   };
 
   const getPolygonCenter = (points) => {
-    const adjustedPoints = adjustPoints(points);
-    return calculateCenter(adjustedPoints);
+    
+    return calculateCenter(points);
   };
 
   const [centerX1, centerY1] = getPolygonCenter(adjustedPointsTopLeft);
