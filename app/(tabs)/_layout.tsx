@@ -17,6 +17,7 @@ const _layout = () => {
     <Tabs
       screenOptions={{
         tabBarStyle: { backgroundColor: colors.offSetBlack, borderTopWidth: 0},
+        tabBarActiveTintColor: colors.lightBlue,
         headerShadowVisible: false,
         headerTintColor: colors.gray,
         headerStyle: { backgroundColor: colors.offSetBlack}
@@ -33,6 +34,7 @@ const _layout = () => {
         name="data" 
         options={{
           title: "Fit Data",
+
           tabBarIcon: ({ color }) => <TabBarIcon name="md-stats-chart-outline" color={color} />,
         }}
         />

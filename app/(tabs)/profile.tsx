@@ -1,9 +1,10 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text } from 'react-native';
+import React from 'react';
+import { colors } from '../../theme/Colors';
 
 const profile = () => {
   return (
-    <View>
+    <View style={{backgroundColor: colors.black, flex: 1,}}>
       <Text>profile</Text>
     </View>
   )
