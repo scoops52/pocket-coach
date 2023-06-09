@@ -59,12 +59,14 @@ const RatioDisplay = () => {
   const [centerX5, centerY5] = getPolygonCenter(adjustedPointsBottomRight);
 
   return (
-    <View style={styles.container}>
+    
       <Svg width={windowWidth} height={150}>
         <Polygon
+          id="date"
           points={adjustedPointsTopLeft}
           stroke={colors.gray}
           strokeWidth={2}
+          strokeLinejoin="round"
         />
         <Text
           fill={colors.gray}
@@ -88,10 +90,12 @@ const RatioDisplay = () => {
           {userData[1].date}
         </Text>
         <Polygon
+          id="zone"
           points={adjustedPointsBottomLeft}
           fill="none"
           stroke={colors.gray}
           strokeWidth={2}
+          strokeLinejoin="round"
         />
         <Text
           fill={colors.gray}
@@ -115,9 +119,11 @@ const RatioDisplay = () => {
           {userData[1].zone}
         </Text>
         <Polygon
+          id="ratio"
           points={adjustedPointsHex}
           stroke={colors.lightBlue}
           strokeWidth={4}
+          strokeLinejoin="round"
         />
         <Text
           fill={colors.lightBlue}
@@ -132,9 +138,9 @@ const RatioDisplay = () => {
         <Text
           fill={colors.lightBlue}
           stroke="none"
-          fontSize="32"
+          fontSize="42"
           x={centerX3}
-          y={centerY3 + 10}
+          y={centerY3 + 15}
           textAnchor="middle"
         >
           {userData[1].ratio.toFixed(2)}
@@ -144,6 +150,7 @@ const RatioDisplay = () => {
           points={adjustedPointsTopRight}
           stroke={colors.gray}
           strokeWidth={2}
+          strokeLinejoin="round"
         />
         <Text
           fill={colors.gray}
@@ -172,6 +179,7 @@ const RatioDisplay = () => {
           fill="none"
           stroke={colors.gray}
           strokeWidth={2}
+          strokeLinejoin="round"
         />
         <Text
           fill={colors.gray}
@@ -195,7 +203,7 @@ const RatioDisplay = () => {
           {userData[1].chronicWorkload}
         </Text>
       </Svg>
-    </View>
+    
   );
 };
 

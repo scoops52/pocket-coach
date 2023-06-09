@@ -27,7 +27,7 @@ const _layout = () => {
           name="summary"
           options={{
             title: "Daily Summary",
-            tabBarIcon: ({ color }) => <TabBarIcon name="today-outline" color={colors.lightBlue} />,
+            tabBarIcon: ({ color }) => <TabBarIcon name="today-outline" color={color} />,
           }}
         />
         <Tabs.Screen 
