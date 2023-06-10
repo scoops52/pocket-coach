@@ -1,4 +1,15 @@
-export const userData = [
+interface UserData {
+    userId: number;
+    date: string;
+    duration: number;
+    rpe: number;
+    acuteWorkload: number;
+    chronicWorkload: number;
+    ratio: number;
+    zone: string;
+}
+
+export const userData: UserData[] = [
     {
       userId: 1,
       date: '2023-04-05',
@@ -258,5 +269,35 @@ export const userData = [
       chronicWorkload: 715.78,
       ratio: 1.0268518259800499,
       zone: 'Optimal'
-    }
-  ]
+    },
+    {
+        userId: 1,
+        date: '2023-05-01',
+        duration: 60,
+        rpe: 8,
+        acuteWorkload: 480,
+        chronicWorkload: 719.56,
+        ratio: 0.6676821305841924,
+        zone: 'Under Training'
+      },
+      {
+        userId: 1,
+        date: '2023-05-02',
+        duration: 90,
+        rpe: 9,
+        acuteWorkload: 810,
+        chronicWorkload: 727.54,
+        ratio: 1.1143061516452075,
+        zone: 'Optimal'
+      },
+      {
+        userId: 1,
+        date: '2023-05-03',
+        duration: 45,
+        rpe: 6,
+        acuteWorkload: 765,
+        chronicWorkload: 728.94,
+        ratio: 1.5734679930795853,
+        zone: 'Overtraining'
+      }
+    ];

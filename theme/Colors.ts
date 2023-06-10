@@ -6,5 +6,8 @@ export const colors = {
     lightBlack: "#232323",
     gray: "#a6a6a6",
     // gray: "rgba(255,255,255,0.40)",
-    white: "#ffffff"
+    white: "#ffffff",
+    green: "#6FCF97",
+    red: "#EB5757",
+    orange: "#F2994A",
 }

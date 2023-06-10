@@ -3,6 +3,9 @@ import React from 'react';
 import { background } from 'native-base/lib/typescript/theme/styled-system';
 import { colors } from '../../theme/Colors';
 import ShapeDisplay from '../../components/ShapeDisplay'
+import ChronicChart from '../../components/ChronicChart';
+import RatioGauge from '../../components/RatioGauge';
+import RatioBar from '../../components/RatioBar'
 
 
 
@@ -12,6 +15,9 @@ const Summary = () => {
     <View style={styles.container}>
       <View style={styles.summaryDisplayContainer}>
         <ShapeDisplay />
+      </View>
+      <View>
+        <RatioBar />
       </View>
       <View style={styles.summaryContainer}>
         <Text style={styles.summaryTitle}>Lorem</Text>
