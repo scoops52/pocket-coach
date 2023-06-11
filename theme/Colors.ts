@@ -1,3 +1,6 @@
+
+
+
 export const colors = {
     blue: "#007AFF",
     lightBlue: "#56CCF2",
@@ -11,3 +14,13 @@ export const colors = {
     red: "#EB5757",
     orange: "#F2994A",
 }
+
+export const getColorByZone = (zone) => {
+    const zoneColors = {
+      'Under Training': colors.green,
+      'Overreaching': colors.orange,
+      'Over Training': colors.red,
+    };
+  
+    return zoneColors[zone] || colors.lightBlue;
+  };

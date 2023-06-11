@@ -298,6 +298,6 @@ export const userData: UserData[] = [
         acuteWorkload: 765,
         chronicWorkload: 728.94,
         ratio: 1.5734679930795853,
-        zone: 'Overtraining'
+        zone: 'Over Training'
       }
     ];

@@ -2,7 +2,7 @@ import { View, Text, StyleSheet } from "react-native";
 import React, { useEffect, useState } from "react";
 import { colors } from "../theme/Colors";
 
-const ZoneBar = ({ userRatio }) => {
+const HorZoneBar = ({ userRatio }) => {
   const getOpacity = (userRatio, threshold) => {
     if (userRatio < threshold) {
       return 0.1;
@@ -133,29 +133,29 @@ const ZoneBar = ({ userRatio }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: "row",
+    flexDirection: "column",
     margin: 10,
     gap: 4,
   },
   barContainer: {
-    flexDirection: "column-reverse",
+    flexDirection: "row",
     gap: 4,
     borderColor: colors.gray,
     borderWidth: 2,
     padding: 2,
+    width: 250
   },
   bar: {
-    width: 40,
-    height: 15,
-    opacity: 0.75,
+    flex: 1,
+    height: 40,
   },
   labelContainer: {
-    flexDirection: "column-reverse",
+    flexDirection: "row",
     gap: 4,
     padding: 2,
   },
   label: {
-    borderLeftWidth: 2,
+    borderTopWidth: 2,
     width: 85,
     paddingLeft: 2,
   },
@@ -169,4 +169,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ZoneBar;
+export default HorZoneBar;

@@ -4,9 +4,18 @@ import { colors } from "../theme/Colors";
 import { Svg, Polygon, Text } from "react-native-svg";
 import { userData } from "../constants/userData";
 
-const RatioDisplay = () => {
+const RatioDisplay = ({userData}) => {
   const windowWidth = Dimensions.get("window").width;
   const ratio = windowWidth / 400; // Calculate the ratio between current width and desired width (400)
+
+  const color = {
+    'Under Training': colors.green,
+    'Overreaching': colors.orange,
+    'Over Training': colors.red,
+  };
+
+  const zoneColor= color[userData.zone] || colors.lightBlue;
+
 
   const adjustPoints = (points) => {
     return points
@@ -79,7 +88,7 @@ const RatioDisplay = () => {
           Date
         </Text>
         <Text
-          fill={colors.lightBlue}
+          fill={zoneColor}
           stroke="none"
           fontSize="15"
           fontWeight="bold"
@@ -87,7 +96,7 @@ const RatioDisplay = () => {
           y={centerY1 + 10}
           textAnchor="middle"
         >
-          {userData[1].date}
+          {userData.date}
         </Text>
         <Polygon
           id="zone"
@@ -108,7 +117,7 @@ const RatioDisplay = () => {
           Zone
         </Text>
         <Text
-          fill={colors.lightBlue}
+          fill={zoneColor}
           stroke="none"
           fontSize="15"
           fontWeight="bold"
@@ -116,17 +125,17 @@ const RatioDisplay = () => {
           y={centerY2 + 10}
           textAnchor="middle"
         >
-          {userData[1].zone}
+          {userData.zone}
         </Text>
         <Polygon
           id="ratio"
           points={adjustedPointsHex}
-          stroke={colors.lightBlue}
+          stroke={zoneColor}
           strokeWidth={4}
           strokeLinejoin="round"
         />
         <Text
-          fill={colors.lightBlue}
+          fill={zoneColor}
           stroke="none"
           fontSize="12"
           x={centerX3}
@@ -136,14 +145,14 @@ const RatioDisplay = () => {
           Ratio
         </Text>
         <Text
-          fill={colors.lightBlue}
+          fill={zoneColor}
           stroke="none"
           fontSize="42"
           x={centerX3}
           y={centerY3 + 15}
           textAnchor="middle"
         >
-          {userData[1].ratio.toFixed(2)}
+          {userData.ratio.toFixed(2)}
         </Text>
         <Polygon
           id="acute"
@@ -163,7 +172,7 @@ const RatioDisplay = () => {
           Acute
         </Text>
         <Text
-          fill={colors.lightBlue}
+          fill={zoneColor}
           stroke="none"
           fontSize="15"
           fontWeight="bold"
@@ -171,7 +180,7 @@ const RatioDisplay = () => {
           y={centerY4 + 10}
           textAnchor="middle"
         >
-          {userData[1].acuteWorkload}
+          {userData.acuteWorkload}
         </Text>
         <Polygon
           id="chronic"
@@ -192,7 +201,7 @@ const RatioDisplay = () => {
           Chronic
         </Text>
         <Text
-          fill={colors.lightBlue}
+          fill={zoneColor}
           stroke="none"
           fontSize="15"
           fontWeight="bold"
@@ -200,7 +209,7 @@ const RatioDisplay = () => {
           y={centerY5 + 10}
           textAnchor="middle"
         >
-          {userData[1].chronicWorkload}
+          {userData.chronicWorkload}
         </Text>
       </Svg>
     
