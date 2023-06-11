@@ -4,13 +4,13 @@ import { userData } from '../constants/userData';
 import { colors } from '../theme/Colors';
 import { Line } from 'react-native-svg';
 
-const ChronicChart = () => {
+const AcuteChart = () => {
     const screenWidth = Dimensions.get('window').width;
     const chartWidth = screenWidth - 16;
 
     const chartData = userData.map((dataPoint) => ({
         date: new  Date(dataPoint.date),
-        chronicWorkload: dataPoint.chronicWorkload,
+        acuteWorkload: dataPoint.acuteWorkload,
       }));
 
       const chartLabels = userData.map((dataPoint) => {
@@ -20,13 +20,13 @@ const ChronicChart = () => {
 
     const filteredChartData = chartData
     .filter((data, index) => index % 7 === 0)
-    .map((data) => data.chronicWorkload);
+    .map((data) => data.acuteWorkload);
       const filteredChartLabels = chartLabels.filter((label, index) => index % 7 === 0);
 
       const chartConfig = {
         backgroundGradientFrom: colors.black,
         backgroundGradientTo: colors.lightBlack,
-        color: (opacity = 1) => colors.blue,
+        color: (opacity = 1) => colors.white,
         labelColor: (opacity = 0.5) => `rgba(255, 255, 255, ${opacity})`,
         strokeWidth: 2,
         propsForBackgroundLines: {
@@ -39,7 +39,7 @@ const ChronicChart = () => {
      <View style={styles.container}>
         <View style={styles.titleContainer}>
             <Text style={styles.title}>
-                Chronic Workload Over Time
+                Acute Workload Over Time
             </Text>
         </View>
       <LineChart
@@ -77,4 +77,4 @@ const styles = StyleSheet.create({
     },
   });
 
-export default ChronicChart
+export default AcuteChart

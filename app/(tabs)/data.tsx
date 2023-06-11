@@ -1,18 +1,24 @@
-import { View, Text } from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
 import React from 'react';
 import { colors } from '../../theme/Colors';
 import ChronicChart from '../../components/ChronicChart';
 import ZoneBar from '../../components/ZoneBar';
 import { userData } from '../../constants/userData';
 import HorZoneBar from '../../components/HorZoneBar';
-import HeatMap from '../../components/Heatmap';
+import Heatmap from '../../components/Heatmap';
+import RatioChart from '../../components/RatioChart';
+import AcuteChart from '../../components/AcuteChart';
 
 const data = () => {
   return (
-    <View style={{backgroundColor: colors.black, flex: 1,}}>
+    <ScrollView style={{backgroundColor: colors.black, flex: 1}}>
+      <View>
+      <RatioChart />
       <ChronicChart />
-      <HeatMap />
-    </View>
+      <AcuteChart />
+      </View>
+    </ScrollView>
+    
   )
 }
 
